@@ -1,0 +1,58 @@
+.layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-light);
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Add gradient background to specific sections */
+.featured-section {
+  background: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
+  padding: 3rem 0;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.categories-section {
+  background: linear-gradient(135deg, #ffffff 0%, var(--background-light) 100%);
+  padding: 3rem 0;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Section headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--secondary-color);
+}
+
+/* Responsive container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+} 

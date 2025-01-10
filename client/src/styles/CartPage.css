@@ -1,0 +1,420 @@
+.cart-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cart-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cart-header h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.cart-header p {
+  color: #666;
+}
+
+/* Cart Content Layout */
+.cart-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+}
+
+/* Cart Items */
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.item-image {
+  width: 120px;
+  height: 120px;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details h3 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.item-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.item-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.item-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.stock-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.stock-status.in-stock {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.stock-status.out-of-stock {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #f8f9fa;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.qty-btn:hover {
+  background: #e9ecef;
+}
+
+.quantity {
+  font-weight: 500;
+  color: #333;
+}
+
+.remove-btn {
+  border: none;
+  background: none;
+  color: #dc3545;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+/* Cart Summary */
+.summary-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 20px;
+}
+
+.summary-card h2 {
+  margin: 0 0 20px;
+  color: #333;
+}
+
+.summary-details {
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.summary-row.total {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  border-top: 1px solid #dee2e6;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.summary-row.discount {
+  color: #28a745;
+}
+
+.coupon-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.coupon-section input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+}
+
+.coupon-section button {
+  padding: 8px 15px;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Payment Methods */
+.payment-methods {
+  margin-bottom: 20px;
+}
+
+.payment-methods h3 {
+  margin: 0 0 15px;
+  color: #333;
+  font-size: 1rem;
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-option:hover {
+  background: #f8f9fa;
+}
+
+.option-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+}
+
+.option-content i {
+  font-size: 1.2rem;
+  color: #FFD814;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background: #FFD814;
+  border: none;
+  border-radius: 6px;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+
+.checkout-btn:hover {
+  background: #F7CA00;
+}
+
+.checkout-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.secure-shopping {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.secure-shopping i {
+  font-size: 2rem;
+  color: #28a745;
+}
+
+.secure-shopping h4 {
+  margin: 0;
+  color: #333;
+}
+
+.secure-shopping p {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Empty Cart */
+.empty-cart {
+  text-align: center;
+  padding: 40px;
+}
+
+.empty-cart i {
+  font-size: 4rem;
+  color: #dee2e6;
+  margin-bottom: 20px;
+}
+
+.empty-cart h2 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.empty-cart p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.continue-shopping {
+  padding: 12px 24px;
+  background: #FFD814;
+  border: none;
+  border-radius: 6px;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.continue-shopping:hover {
+  background: #F7CA00;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .cart-content {
+    grid-template-columns: 1fr 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    flex-direction: column;
+  }
+
+  .item-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .summary-card {
+    position: static;
+  }
+}
+
+@media (max-width: 576px) {
+  .cart-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .item-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .payment-option {
+    padding: 8px;
+  }
+}
+
+.payment-section {
+  margin-top: 20px;
+}
+
+.payment-gateway {
+  margin: 20px 0;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+/* Braintree iframe styles */
+.braintree-placeholder {
+  background: #f8f9fa !important;
+}
+
+.braintree-upper-container {
+  border-radius: 8px !important;
+}
+
+.braintree-option {
+  background: white !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+.braintree-option:hover {
+  background: #f8f9fa !important;
+}
+
+.braintree-option.braintree-option__card {
+  border-radius: 8px !important;
+} 

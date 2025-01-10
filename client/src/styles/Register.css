@@ -1,0 +1,266 @@
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  padding: 20px;
+}
+
+.register-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-header h1 {
+  color: #333;
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.register-header p {
+  color: #666;
+  margin: 0;
+}
+
+/* Progress Steps */
+.form-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.progress-step.active .step-number {
+  background: #FFD814;
+  border-color: #FFD814;
+  color: #333;
+}
+
+.progress-step span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.progress-line {
+  flex: 1;
+  height: 2px;
+  background: #dee2e6;
+  margin: 0 15px;
+  position: relative;
+  top: -12px;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group label i {
+  margin-right: 8px;
+  color: #FFD814;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #FFD814;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,216,20,0.2);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #dc3545;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Password Input */
+.password-input {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+}
+
+/* Password Strength */
+.password-strength {
+  margin-top: 10px;
+}
+
+.strength-bars {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.strength-bar {
+  height: 4px;
+  flex: 1;
+  background: #dee2e6;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.strength-bar.filled {
+  background: #FFD814;
+}
+
+.strength-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Buttons */
+.next-btn,
+.back-btn,
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.next-btn {
+  background: #FFD814;
+  color: #333;
+}
+
+.back-btn {
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+}
+
+.register-btn {
+  background: #FFD814;
+  color: #333;
+}
+
+.next-btn:hover,
+.register-btn:hover {
+  background: #F7CA00;
+}
+
+.back-btn:hover {
+  background: #e9ecef;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+.register-footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.register-footer span {
+  color: #FFD814;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.register-footer span:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .register-card {
+    padding: 20px;
+  }
+
+  .register-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+} 
