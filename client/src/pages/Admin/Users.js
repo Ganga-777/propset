@@ -14,7 +14,7 @@ const Users = () => {
   // Get all users
   const getAllUsers = async () => {
     try {
-      const { data } = await axios.get("/api/v1/auth/all-users", {
+      const { data } = await axios.get("http://localhost:8081/api/v1/auth/all-users", {
         headers: {
           Authorization: auth?.token,
         },
@@ -37,7 +37,7 @@ const Users = () => {
   const handleRoleUpdate = async (userId, newRole) => {
     try {
       const { data } = await axios.put(
-        `/api/v1/auth/update-user-role/${userId}`,
+        `http://localhost:8081/api/v1/auth/update-user-role/${userId}`,
         { role: newRole },
         {
           headers: {
@@ -102,7 +102,7 @@ const Users = () => {
                           onClick={async () => {
                             try {
                               const { data } = await axios.delete(
-                                `/api/v1/auth/delete-user/${user._id}`,
+                                `http://localhost:8081/api/v1/auth/delete-user/${user._id}`,
                                 {
                                   headers: {
                                     Authorization: auth?.token,

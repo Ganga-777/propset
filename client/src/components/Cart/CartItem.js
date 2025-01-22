@@ -11,7 +11,7 @@ const CartItem = ({ product }) => {
   return (
     <div className="cart-item">
       <img 
-        src={`/api/v1/product/product-photo/${product._id}`} 
+        src={`http://localhost:8081/api/v1/product/product-photo/${product._id}`} 
         alt={product.name} 
       />
       <div className="cart-item-details">

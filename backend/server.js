@@ -38,9 +38,9 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // Routes
-app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/category", categoryRoutes);
-app.use("/api/v1/product", productRoutes);
+app.use("http://localhost:8081/api/v1/auth", authRoutes);
+app.use("http://localhost:8081/api/v1/category", categoryRoutes);
+app.use("http://localhost:8081/api/v1/product", productRoutes);
 
 // Logging middleware
 app.use((req, res, next) => {
@@ -50,10 +50,10 @@ app.use((req, res, next) => {
 
 // Serve static files only in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, './client/build')));
+  app.use(express.static(path.join(__dirname, '../client/build')));
   
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
 }
 

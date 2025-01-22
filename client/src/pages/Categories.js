@@ -17,7 +17,7 @@ const Categories = () => {
   const getAllCategories = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get("http://localhost:8081/api/v1/category/get-category");
       if (data?.success) {
         // Add sample product counts and featured status
         const enrichedCategories = data.category.map(cat => ({

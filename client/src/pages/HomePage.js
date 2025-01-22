@@ -23,7 +23,7 @@ const HomePage = () => {
   // Get all categories
   const getAllCategories = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get("http://localhost:8081/api/v1/category/get-category");
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -36,7 +36,7 @@ const HomePage = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get("/api/v1/product/get-product");
+      const { data } = await axios.get("http://localhost:8081/api/v1/product/get-product");
       if (data?.success) {
         setProducts(data.products);
         setTotal(data.total);
@@ -62,7 +62,7 @@ const HomePage = () => {
   // Get filtered products
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post("/api/v1/product/product-filters", {
+      const { data } = await axios.post("http://localhost:8081/api/v1/product/product-filters", {
         checked,
         radio,
       });
@@ -168,7 +168,7 @@ const HomePage = () => {
 
                     <div className="product-image-container">
                       <img
-                        src={`/api/v1/product/product-photo/${p._id}`}
+                        src={`http://localhost:8081/api/v1/product/product-photo/${p._id}`}
                         alt={p.name}
                         className="product-img"
                         loading="lazy"
@@ -232,7 +232,7 @@ const HomePage = () => {
             <div className="modal-body">
               <div className="modal-image">
                 <img
-                  src={`/api/v1/product/product-photo/${selectedProduct._id}`}
+                  src={`http://localhost:8081/api/v1/product/product-photo/${selectedProduct._id}`}
                   alt={selectedProduct.name}
                 />
               </div>

@@ -20,7 +20,7 @@ const ProductDetails = () => {
   const getProduct = async () => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/get-product/${params.slug}`
+        `http://localhost:8081/api/v1/product/get-product/${params.slug}`
       );
       setProduct(data?.product);
       getSimilarProduct(data?.product._id, data?.product.category._id);
@@ -33,7 +33,7 @@ const ProductDetails = () => {
   const getSimilarProduct = async (pid, cid) => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/related-product/${pid}/${cid}`
+        `http://localhost:8081/api/v1/product/related-product/${pid}/${cid}`
       );
       setRelatedProducts(data?.products);
     } catch (error) {
@@ -65,7 +65,7 @@ const ProductDetails = () => {
         <div className="product-main">
           <div className="product-image-section">
             <img
-              src={`/api/v1/product/product-photo/${product._id}`}
+              src={`http://localhost:8081/api/v1/product/product-photo/${product._id}`}
               alt={product.name}
               className="product-main-image"
             />
@@ -208,7 +208,7 @@ const ProductDetails = () => {
                 <div className="similar-product-card" key={p._id}>
                   <div className="similar-product-image-container">
                     <img
-                      src={`/api/v1/product/product-photo/${p._id}`}
+                      src={`http://localhost:8081/api/v1/product/product-photo/${p._id}`}
                       alt={p.name}
                       className="similar-product-img"
                       loading="lazy"
@@ -279,7 +279,7 @@ const ProductDetails = () => {
               <div className="modal-body">
                 <div className="modal-image">
                   <img
-                    src={`/api/v1/product/product-photo/${selectedSimilarProduct._id}`}
+                    src={`http://localhost:8081/api/v1/product/product-photo/${selectedSimilarProduct._id}`}
                     alt={selectedSimilarProduct.name}
                   />
                 </div>

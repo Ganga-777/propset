@@ -33,7 +33,7 @@ const CategoryProduct = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `/api/v1/product/product-category/${params.slug}`
+        `http://localhost:8081/api/v1/product/product-category/${params.slug}`
       );
       setProducts(data?.products);
       setCategory(data?.category);
@@ -208,7 +208,7 @@ const CategoryProduct = () => {
                     
                     <div className="product-image-container">
                       <img
-                        src={`/api/v1/product/product-photo/${p._id}`}
+                        src={`http://localhost:8081/api/v1/product/product-photo/${p._id}`}
                         alt={p.name}
                         className="product-img"
                         loading="lazy"
@@ -274,7 +274,7 @@ const CategoryProduct = () => {
             <div className="modal-body">
               <div className="modal-image">
                 <img
-                  src={`/api/v1/product/product-photo/${selectedProduct._id}`}
+                  src={`http://localhost:8081/api/v1/product/product-photo/${selectedProduct._id}`}
                   alt={selectedProduct.name}
                 />
               </div>
